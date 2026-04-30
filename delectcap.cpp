@@ -1,0 +1,43 @@
+
+// Code
+// Testcase
+// Test Result
+// 520. Detect Capital
+// Solved
+// Easy
+// Topics
+// premium lock icon
+// Companies
+// We define the usage of capitals in a word to be right when one of the following cases holds:
+
+// All letters in this word are capitals, like "USA".
+// All letters in this word are not capitals, like "leetcode".
+// Only the first letter in this word is capital, like "Google".
+// Given a string word, return true if the usage of capitals in it is right.
+
+ 
+
+// Example 1:
+
+// Input: word = "USA"
+// Output: true
+
+
+// ___________________________________________________________________
+class Solution {
+public:
+    bool detectCapitalUse(string word) {
+        for(int i=0;i<word.length();i++){
+            if(word[0]>90 && word[i]<=90){
+                return false;
+            }
+            else if(word[0]<=90 && word[1]<=90 && word[i]>90){
+                return false;
+            }
+            else if(word[0]<=90 && i>0 && word[1]>90 && word[i]<=90){
+                return false;
+            }
+        }
+        return true;
+    }
+};
